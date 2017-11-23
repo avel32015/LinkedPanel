@@ -2,15 +2,9 @@ Ext.define('App.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
 
-    requires: [
-        'App.store.Items'
-    ],
-
     title: 'Items',
-
-    store: { type: 'items' },
-
-    frame: true,
+    bind: '{items}',
+    reference: 'itemsList',
     
     columns: [{
         text: 'ID',
@@ -22,9 +16,11 @@ Ext.define('App.view.main.List', {
         flex: 1,
         sortable: true,
         dataIndex: 'name'
-    }],
+    }]
+    
+    /*,
 
     listeners: {
         select: 'onGridSelected'
-    }
+    }*/
 });

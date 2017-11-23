@@ -8,7 +8,7 @@ Ext.define('App.model.Item', {
         useNull: false
     }, 'name', 'description'],
     
-    validations: [{
+    validators: [{
         type: 'length',
         field: 'name',
         min: 1

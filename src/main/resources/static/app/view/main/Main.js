@@ -5,18 +5,29 @@ Ext.define('App.view.main.Main', {
     requires: [
         'App.view.main.MainController',
         'App.view.main.List',
-        'App.view.main.Details'
+        'App.view.main.Details',
+        'App.store.Items'
     ],
 
     controller: 'main',
+    referenceHolder: true,
+    session: {},
+    viewModel: {
+        stores: {
+            items: { type: 'items' } 
+        }
+    },
 
-    //layout: 'vbox',
+    layout: {
+        type: 'vbox',
+        pack: 'end',
+        align: 'stretch'
+    },
     
     items: [{
-    	//flex: 3,
-    	xtype: 'mainlist'
+    	xtype: 'mainlist',
+    	flex: 1
     }, {
-    	height: 200,
     	xtype: 'details'
     }]
 });
